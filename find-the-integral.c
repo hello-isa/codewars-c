@@ -9,7 +9,15 @@ Notes:
 
 The output should be a string.
 The coefficient and exponent is always a positive integer.
+
+Examples
+ 3, 2  -->  "1x^3"
+12, 5  -->  "2x^6"
+20, 1  -->  "10x^2"
+40, 3  -->  "10x^4"
+90, 2  -->  "30x^3"
 */
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -21,6 +29,18 @@ int main()
     char result[10];
 
     strcpy(result, integrate(3, 2));
+    printf("%s", result);
+
+    strcpy(result, integrate(12, 5));
+    printf("%s", result);
+
+    strcpy(result, integrate(20, 1));
+    printf("%s", result);
+
+    strcpy(result, integrate(40, 3));
+    printf("%s", result);
+
+    strcpy(result, integrate(90, 2));
     printf("%s", result);
 
     return 0;
@@ -35,7 +55,7 @@ char *integrate(int coefficient, int exponent)
     // Allocate memory for the string since this will be returned to the main function
     // Without allocating memory, once the function exits, it will be not accessible
 
-    snprintf(integral, 10, "%dx^%d", coefficient, n);
+    snprintf(integral, 10, "%dx^%d\n", coefficient, n);
     // `snprintf` is used to format a string which the buffer will hold
 
     return integral;
