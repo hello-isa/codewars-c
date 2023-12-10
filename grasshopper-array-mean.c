@@ -22,10 +22,11 @@ double find_average(size_t length, const int nums[length]);
 
 int main()
 {
-    int listOne[] = {1};
-    size_t listOneLength = sizeof(listOne) / sizeof(listOne[0]); // sizeof returns size_t
+    int listOne[] = {1}; // array is modifiable e.g. listOne[0] = 5 is allowed
+    // Find the size of the array without hardcoding it
+    size_t listOneLength = sizeof(listOne) / sizeof(listOne[0]); // sizeof returns the datatype size_t
 
-    int listTwo[] = {1, 3, 5, 7};
+    const int listTwo[] = {1, 3, 5, 7}; // array is not modifiable e.g. listTwo[0] = 5 will result to compilation error
     size_t listTwoLength = sizeof(listTwo) / sizeof(listTwo[0]);
 
     int listThree[] = {-1, 3, 5, -7};
