@@ -22,11 +22,11 @@ void derive(int coefficient, int exponent, char *derivative);
 
 int main()
 {
-    char result1[50];
+    char result1[50]; // array of characters
     char result2[50];
 
     derive(7, 8, result1);
-    printf("Derivative: %s\n", result1);
+    printf("Derivative: %s\n", result1); // passing the address to the first element of the array
 
     derive(5, 9, result2);
     printf("Derivative: %s\n", result2);
@@ -36,8 +36,8 @@ int main()
 
 // do not allocate memory for result
 // assign result to provided pointer
-
 void derive(int coefficient, int exponent, char *derivative)
 {
     sprintf(derivative, "%dx^%d", coefficient * exponent, exponent - 1);
+    // sprintf writes in the array of characters
 }
